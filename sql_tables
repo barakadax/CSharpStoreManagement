@@ -1,0 +1,39 @@
+CREATE TABLE public."Customers" (
+    "ID" integer NOT NULL,
+    "First name" character varying,
+    "Last name" character varying,
+    "Phone" character varying,
+    "City" character varying
+);
+
+CREATE TABLE public."Orderd" (
+    "Order ID" integer NOT NULL,
+    "Product Number" integer,
+    "Customer ID" integer,
+    "Quantity" integer
+);
+
+CREATE TABLE public."Products" (
+    "Product number" integer NOT NULL,
+    "Name" character varying,
+    "Supplier" integer
+);
+
+CREATE TABLE public."Suppliers" (
+    "ID" integer NOT NULL,
+    "First name" character varying,
+    "Last name" character varying,
+    "Mail" character varying
+);
+
+ALTER TABLE ONLY public."Customers"
+    ADD CONSTRAINT "Customers_pkey" PRIMARY KEY ("ID");
+
+ALTER TABLE ONLY public."Orderd"
+    ADD CONSTRAINT "Orderd_pkey" PRIMARY KEY ("Order ID");
+
+ALTER TABLE ONLY public."Products"
+    ADD CONSTRAINT "Products_pkey" PRIMARY KEY ("Product number");
+
+ALTER TABLE ONLY public."Suppliers"
+    ADD CONSTRAINT "Suppliers_pkey" PRIMARY KEY ("ID");
